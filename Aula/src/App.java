@@ -6,9 +6,13 @@ public class App {
         double pi = 3.14;
         boolean verdade = true;
         boolean menorIdade = idade < 18;
-// char só guarda uma letra
+//Char só guarda uma letra
         char letra;
         letra = 'a';
         System.out.println(letra);
+        System.out.println(idade);
+        System.out.print(pi);
+        System.out.println(verdade);
+        System.out.println("Teste de imprimir ");
     }
 }

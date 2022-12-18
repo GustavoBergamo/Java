@@ -15,7 +15,7 @@ public class Lotofacil {
         while (i < 15) {
                 int number = generate.nextInt(26);
                 if (number == a[0] || number == a[1] || number == a[2] || number == a[3] || number == a[4] || number == a[5] || number == a[6] || number == a[7] || number == a[8] || number == a[9] || number == a[10] || number == a[11] || number == a[12] || number == a[13] || number == a[14]) {
-                   System.out.println("Deu igual");
+                   System.out.println(number + "Deu igual");
                     number = generate.nextInt();
                 }else{
                 a[i] = number;

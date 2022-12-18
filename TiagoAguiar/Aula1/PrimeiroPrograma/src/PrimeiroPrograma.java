@@ -1,5 +1,6 @@
 public class PrimeiroPrograma {
 //O Java procura esse main a seguir para saber onde começar.
+//Os parâmetros do main são String e args
     public static void main(String[] args) {
 
 //Variáveis
@@ -61,11 +62,44 @@ public class PrimeiroPrograma {
         }else{
             System.out.println("Não é");
         }
+
+//Reutilizando o método sum criado lá bem baixo, os parâmetros estão entre parênteses
+        sum(3, 4);
+        sum(90, 89);
+        sum(1234, 4321);
+        sum(0, 1);
+        System.out.println ("---------- Criando um espaço ----------");
+        calc(5, 5);
+// 5 e 5 são os argumentos da função calc da linha de cima.
+
+//com [] colchetes é o bloco de coleção, igual linguagem C
+
+
     }
 
 //Aqui foi criado uma instrução que pode ser chamada quando quiser.
+//static void é a declaração padrão
+//imprimir é o nome da função, pode ser qualquer coisa, geralmente usa verbo (o que a função faz)
+// () parênteses usamos para definir o que chegará naquela função, tem que chegar algo. Sempre tipo e nome da variável
+// em seguida colocar as chaves para o bloco de código{}
     static void imprimir() {
         System.out.println("chamei a instrução");
     }
 
+//Programas dinâmicos
+//Criando instrução de soma por exemplo
+//Quando digitar sum vai chamar isso aqui em baixo
+//O parênteses depois do sum é o que quer passar de variável
+//Resumindo, quando dizer sum vai esperar (duas variáveis inteiras) e vai somá-las
+    static void sum(int primeiroNumero, int segundoNumero) {
+        System.out.println(primeiroNumero + segundoNumero);
+    }
+
+//criando uma instrução PADRÃO que faz as 4 operações com 2 números
+    static void calc(double a, double b) {
+        System.out.println(a + b);
+        System.out.println(a - b);
+        System.out.println(a * b);
+        System.out.println(a / b);
+    }
 }

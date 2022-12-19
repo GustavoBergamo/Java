@@ -6,6 +6,7 @@ public class Main {
 //      tipo         variável= novo tipo
         user user    = new user();
         com.gustavo.paraimportar.user user1 = new user();
+        System.out.println("working");
 
 
     }

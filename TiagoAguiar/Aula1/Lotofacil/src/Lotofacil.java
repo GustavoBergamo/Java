@@ -24,7 +24,8 @@ public class Lotofacil {
 //for(int i = 0; i < 15; i++){}
         }
         for (i = 0; i < 15; i++) {
-            System.out.print(a[i] + " - ");
+            System.out.print(" - " + a[i]);
         }
+        System.out.println(" -");
     }
 }

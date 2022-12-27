@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Primitivos {
     public static void main(String[] args) {
 
@@ -36,6 +38,10 @@ public class Primitivos {
         System.out.println(ff);
         int ii = (int) dd / ss;
         System.out.println(ii);
+        Scanner scanner = new Scanner(System.in);
+        int z = (int) scanner.nextDouble();//pode entrar qualquer número que armazena inteiro
+        System.out.println(z);
+
 
 
 

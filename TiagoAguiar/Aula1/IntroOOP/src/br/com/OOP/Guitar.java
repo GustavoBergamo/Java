@@ -1,3 +1,5 @@
+package br.com.OOP;
+
 public class Guitar {
     //propriedades
     public String name;

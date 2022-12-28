@@ -1,12 +1,15 @@
+package br.com.OOP;
+
+import java.sql.SQLOutput;
+
 //Objeto precisa de molde (nome, idade...)
 //A classe é o molde do objeto, onde estão as propriedades e comportamentos.
 public class IntroOOP {
     public static void main(String[] args) {
-//criando um objeto, declarar o UserA a partir do User (importar)
+//criando um objeto, declarar o UserA a partir do br.com.OOP.User (importar)
         User userA = new User(); //ESSA LINHA É: instanciar, tornar vivo, alocar espaço memória
         userA.firstname = "Antonie";
         userA.lastname = "Peixoto";
-
 
         //Instanciando Usuário B (criando)
         User userB = new User();
@@ -26,6 +29,9 @@ public class IntroOOP {
         ibanez.name = "Ibanez";
         ibanez.chords = 6;
 
+        //Usando um método
+        String fullname = userA.getfullname();
+        System.out.println(fullname);
 
 
     }

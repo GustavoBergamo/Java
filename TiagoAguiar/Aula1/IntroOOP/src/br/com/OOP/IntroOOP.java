@@ -1,5 +1,6 @@
 package br.com.OOP;
 
+import javax.swing.*;
 import java.sql.SQLOutput;
 
 //Objeto precisa de molde (nome, idade...)
@@ -31,6 +32,7 @@ public class IntroOOP {
 
         //Usando um método
         String fullname = userA.getfullname();
+        JOptionPane.showMessageDialog(null, "Bom dia!");
         System.out.println(fullname);
 
 

@@ -1,11 +1,10 @@
 //cria 15 números aleatórios para Lotofácil
+//os 4 primeiros jogos são aleatórios
+//os 4 últimos fazem espelho dos primeiros e adiciona 5 números aleatórios
 //números até 25 e não repetidos
 
 import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.IntStream;
 
 
@@ -147,7 +146,50 @@ public class Lotofacil {
         }
 
         // Adicionando 5 números aleatórios que faltam em sorteio5,6,7 e 8
+        i = 0;
+        while (i < 5) {
+            number = generate.nextInt(26);
+            while (sorteio5.contains(number) || number == 0) {
+                number = generateD.nextInt(26);
+            }
+            sorteio5.add(number);
+            i++;
+        }
 
+        i = 0;
+        while (i < 5) {
+            number = generate.nextInt(26);
+            while (sorteio6.contains(number) || number == 0) {
+                number = generateD.nextInt(26);
+            }
+            sorteio6.add(number);
+            i++;
+        }
+
+        i = 0;
+        while (i < 5) {
+            number = generate.nextInt(26);
+            while (sorteio7.contains(number) || number == 0) {
+                number = generateD.nextInt(26);
+            }
+            sorteio7.add(number);
+            i++;
+        }
+
+        i = 0;
+        while (i < 5) {
+            number = generate.nextInt(26);
+            while (sorteio8.contains(number) || number == 0) {
+                number = generateD.nextInt(26);
+            }
+                sorteio8.add(number);
+                i++;
+            }
+//Colocando sorteio5,6,7 e 8 em ordem
+        Collections.sort(sorteio5);
+        Collections.sort(sorteio6);
+        Collections.sort(sorteio7);
+        Collections.sort(sorteio8);
 
         //imprimindo sorteior e arrumados
         System.out.println(sorteio1);

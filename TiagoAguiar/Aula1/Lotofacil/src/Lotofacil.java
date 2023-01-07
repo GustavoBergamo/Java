@@ -192,7 +192,13 @@ public class Lotofacil {
         Collections.sort(sorteio8);
 
         //imprimindo sorteior e arrumados
-        System.out.println(sorteio1);
+        i = 0;
+        while (i < 15){
+            System.out.print(sorteio1.get(i) + "    ");
+            i++;
+        }
+        System.out.println();
+
         System.out.println(sorteio2);
         System.out.println(sorteio3);
         System.out.println(sorteio4);

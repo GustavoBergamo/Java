@@ -19,7 +19,7 @@ public class Lotofacil {
         int[] b = new int[25];
         int[] c = new int[25];
         int[] d = new int[25];
-        int[] aa = new int[30];
+        int[] aa = new int[15];
         int i = 0;
         a[0] = 0;
         b[0] = 0;
@@ -192,22 +192,93 @@ public class Lotofacil {
         Collections.sort(sorteio8);
 
         //imprimindo sorteior e arrumados
+
         i = 0;
         while (i < 15){
-            System.out.print(sorteio1.get(i) + "    ");
+            if ((int) sorteio1.get(i) < 10){
+                System.out.print(sorteio1.get(i) + "   ");
+            }else{
+                System.out.print(sorteio1.get(i) + "  ");
+            }
             i++;
         }
         System.out.println();
 
-        System.out.println(sorteio2);
-        System.out.println(sorteio3);
-        System.out.println(sorteio4);
-        System.out.println(sorteio5);
-        System.out.println(sorteio6);
-        System.out.println(sorteio7);
-        System.out.println(sorteio8);
+        i = 0;
+        while (i < 15){
+            if ((int) sorteio2.get(i) < 10){
+                System.out.print(sorteio2.get(i) + "   ");
+            }else{
+                System.out.print(sorteio2.get(i) + "  ");
+            }
+            i++;
+        }
+        System.out.println();
 
+        i = 0;
+        while (i < 15){
+            if ((int) sorteio3.get(i) < 10){
+                System.out.print(sorteio3.get(i) + "   ");
+            }else{
+                System.out.print(sorteio3.get(i) + "  ");
+            }
+            i++;
+        }
+        System.out.println();
 
+        i = 0;
+        while (i < 15){
+            if ((int) sorteio4.get(i) < 10){
+                System.out.print(sorteio4.get(i) + "   ");
+            }else{
+                System.out.print(sorteio4.get(i) + "  ");
+            }
+            i++;
+        }
+        System.out.println();
+
+        i = 0;
+        while (i < 15){
+            if ((int) sorteio5.get(i) < 10){
+                System.out.print(sorteio5.get(i) + "   ");
+            }else{
+                System.out.print(sorteio5.get(i) + "  ");
+            }
+            i++;
+        }
+        System.out.println();
+
+        i = 0;
+        while (i < 15){
+            if ((int) sorteio6.get(i) < 10){
+                System.out.print(sorteio6.get(i) + "   ");
+            }else{
+                System.out.print(sorteio6.get(i) + "  ");
+            }
+            i++;
+        }
+        System.out.println();
+
+        i = 0;
+        while (i < 15){
+            if ((int) sorteio7.get(i) < 10){
+                System.out.print(sorteio7.get(i) + "   ");
+            }else{
+                System.out.print(sorteio7.get(i) + "  ");
+            }
+            i++;
+        }
+        System.out.println();
+
+        i = 0;
+        while (i < 15){
+            if ((int) sorteio8.get(i) < 10){
+                System.out.print(sorteio8.get(i) + "   ");
+            }else{
+                System.out.print(sorteio8.get(i) + "  ");
+            }
+            i++;
+        }
     }
     }
 

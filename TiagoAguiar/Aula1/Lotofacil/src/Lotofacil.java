@@ -95,52 +95,52 @@ public class Lotofacil {
         Arrays.sort(d);
 
         //Colocando números em List's
-        for(i = 1; i <= 24; ++i) {
-            if (a[i] != 0){
+        for (i = 1; i <= 24; ++i) {
+            if (a[i] != 0) {
                 sorteio1.add(a[i]);
             }
         }
 
-        for(i = 1; i <= 24; ++i) {
-            if (b[i] != 0){
+        for (i = 1; i <= 24; ++i) {
+            if (b[i] != 0) {
                 sorteio2.add(b[i]);
             }
         }
 
-        for(i = 1; i <= 24; ++i) {
-            if (c[i] != 0){
+        for (i = 1; i <= 24; ++i) {
+            if (c[i] != 0) {
                 sorteio3.add(c[i]);
             }
         }
 
-        for(i = 1; i <= 24; ++i) {
-            if (d[i] != 0){
+        for (i = 1; i <= 24; ++i) {
+            if (d[i] != 0) {
                 sorteio4.add(d[i]);
             }
         }
 
 
         //criando espelhos
-        for (i = 1; i <= 25; i++){
-            if (!sorteio1.contains(i)){
+        for (i = 1; i <= 25; i++) {
+            if (!sorteio1.contains(i)) {
                 sorteio5.add(i);
             }
         }
 
-        for (i = 1; i <= 25; i++){
-            if (!sorteio2.contains(i)){
+        for (i = 1; i <= 25; i++) {
+            if (!sorteio2.contains(i)) {
                 sorteio6.add(i);
             }
         }
 
-        for (i = 1; i <= 25; i++){
-            if (!sorteio3.contains(i)){
+        for (i = 1; i <= 25; i++) {
+            if (!sorteio3.contains(i)) {
                 sorteio7.add(i);
             }
         }
 
-        for (i = 1; i <= 25; i++){
-            if (!sorteio4.contains(i)){
+        for (i = 1; i <= 25; i++) {
+            if (!sorteio4.contains(i)) {
                 sorteio8.add(i);
             }
         }
@@ -182,9 +182,9 @@ public class Lotofacil {
             while (sorteio8.contains(number) || number == 0) {
                 number = generateD.nextInt(26);
             }
-                sorteio8.add(number);
-                i++;
-            }
+            sorteio8.add(number);
+            i++;
+        }
 //Colocando sorteio5,6,7 e 8 em ordem
         Collections.sort(sorteio5);
         Collections.sort(sorteio6);
@@ -194,10 +194,10 @@ public class Lotofacil {
         //imprimindo sorteior e arrumados
 
         i = 0;
-        while (i < 15){
-            if ((int) sorteio1.get(i) < 10){
+        while (i < 15) {
+            if ((int) sorteio1.get(i) < 10) {
                 System.out.print(sorteio1.get(i) + "   ");
-            }else{
+            } else {
                 System.out.print(sorteio1.get(i) + "  ");
             }
             i++;
@@ -205,10 +205,10 @@ public class Lotofacil {
         System.out.println();
 
         i = 0;
-        while (i < 15){
-            if ((int) sorteio2.get(i) < 10){
+        while (i < 15) {
+            if ((int) sorteio2.get(i) < 10) {
                 System.out.print(sorteio2.get(i) + "   ");
-            }else{
+            } else {
                 System.out.print(sorteio2.get(i) + "  ");
             }
             i++;
@@ -216,10 +216,10 @@ public class Lotofacil {
         System.out.println();
 
         i = 0;
-        while (i < 15){
-            if ((int) sorteio3.get(i) < 10){
+        while (i < 15) {
+            if ((int) sorteio3.get(i) < 10) {
                 System.out.print(sorteio3.get(i) + "   ");
-            }else{
+            } else {
                 System.out.print(sorteio3.get(i) + "  ");
             }
             i++;
@@ -227,10 +227,10 @@ public class Lotofacil {
         System.out.println();
 
         i = 0;
-        while (i < 15){
-            if ((int) sorteio4.get(i) < 10){
+        while (i < 15) {
+            if ((int) sorteio4.get(i) < 10) {
                 System.out.print(sorteio4.get(i) + "   ");
-            }else{
+            } else {
                 System.out.print(sorteio4.get(i) + "  ");
             }
             i++;
@@ -238,10 +238,10 @@ public class Lotofacil {
         System.out.println();
 
         i = 0;
-        while (i < 15){
-            if ((int) sorteio5.get(i) < 10){
+        while (i < 15) {
+            if ((int) sorteio5.get(i) < 10) {
                 System.out.print(sorteio5.get(i) + "   ");
-            }else{
+            } else {
                 System.out.print(sorteio5.get(i) + "  ");
             }
             i++;
@@ -249,10 +249,10 @@ public class Lotofacil {
         System.out.println();
 
         i = 0;
-        while (i < 15){
-            if ((int) sorteio6.get(i) < 10){
+        while (i < 15) {
+            if ((int) sorteio6.get(i) < 10) {
                 System.out.print(sorteio6.get(i) + "   ");
-            }else{
+            } else {
                 System.out.print(sorteio6.get(i) + "  ");
             }
             i++;
@@ -260,10 +260,10 @@ public class Lotofacil {
         System.out.println();
 
         i = 0;
-        while (i < 15){
-            if ((int) sorteio7.get(i) < 10){
+        while (i < 15) {
+            if ((int) sorteio7.get(i) < 10) {
                 System.out.print(sorteio7.get(i) + "   ");
-            }else{
+            } else {
                 System.out.print(sorteio7.get(i) + "  ");
             }
             i++;
@@ -271,18 +271,139 @@ public class Lotofacil {
         System.out.println();
 
         i = 0;
-        while (i < 15){
-            if ((int) sorteio8.get(i) < 10){
+        while (i < 15) {
+            if ((int) sorteio8.get(i) < 10) {
                 System.out.print(sorteio8.get(i) + "   ");
-            }else{
+            } else {
                 System.out.print(sorteio8.get(i) + "  ");
             }
             i++;
         }
-    }
-    }
+        //Desenhando
+        System.out.println();
+        System.out.println("________________");
+        i = 1;
+        while (i < 6) {
+            if (sorteio1.contains(i)) {
+                System.out.print("|XX");
+            } else {
+                System.out.print("|0" + i);
+            }
+            i++;
+        }
+        System.out.println("|");
 
-//a mesma coisa com for
+        i = 6;
+        while (i < 10) {
+            if (sorteio1.contains(i)) {
+                System.out.print("|XX");
+            } else {
+                System.out.print("|0" + i);
+            }
+            i++;
+        }
+        if (sorteio1.contains(10)) {
+            System.out.println("|XX|");
+        } else {
+            System.out.println("|10|");
+        }
+        i = 11;
+        while (i < 16) {
+            if (sorteio1.contains(i)) {
+                System.out.print("|XX");
+            } else {
+                System.out.print("|" + i);
+            }
+            i++;
+        }
+        System.out.println("|");
+
+        i = 16;
+        while (i < 21) {
+            if (sorteio1.contains(i)) {
+                System.out.print("|XX");
+            } else {
+                System.out.print("|" + i);
+            }
+            i++;
+        }
+        System.out.println("|");
+
+        i = 21;
+        while (i < 26) {
+            if (sorteio1.contains(i)) {
+                System.out.print("|XX");
+            } else {
+                System.out.print("|" + i);
+            }
+            i++;
+        }
+        System.out.println("|");
+
+
+        System.out.println();
+        System.out.println("________________");
+        i = 1;
+        while (i < 6) {
+            if (sorteio2.contains(i)) {
+                System.out.print("|XX");
+            } else {
+                System.out.print("|0" + i);
+            }
+            i++;
+        }
+        System.out.println("|");
+
+        i = 6;
+        while (i < 10) {
+            if (sorteio2.contains(i)) {
+                System.out.print("|XX");
+            } else {
+                System.out.print("|0" + i);
+            }
+            i++;
+        }
+        if (sorteio2.contains(10)) {
+            System.out.println("|XX|");
+        } else {
+            System.out.println("|10|");
+        }
+        i = 11;
+        while (i < 16) {
+            if (sorteio2.contains(i)) {
+                System.out.print("|XX");
+            } else {
+                System.out.print("|" + i);
+            }
+            i++;
+        }
+        System.out.println("|");
+
+        i = 16;
+        while (i < 21) {
+            if (sorteio2.contains(i)) {
+                System.out.print("|XX");
+            } else {
+                System.out.print("|" + i);
+            }
+            i++;
+        }
+        System.out.println("|");
+
+        i = 21;
+        while (i < 26) {
+            if (sorteio2.contains(i)) {
+                System.out.print("|XX");
+            } else {
+                System.out.print("|" + i);
+            }
+            i++;
+        }
+        System.out.println("|");
+
+    }
+}
+//while pode ser substituido por for
 //for(int i = 0; i < 15; i++){}
 
 

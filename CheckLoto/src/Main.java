@@ -8,7 +8,7 @@ public class Main {
         Integer j4[] = {1, 3, 5, 6, 8, 10, 11, 12, 13, 15, 19, 20, 21, 22, 24};
 
         //Colocar aqui abaixo os numeros sorteados, devem ser 15 para nao gerar erro.
-        Integer sorteio[] = {1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 24, 24, 24};
+        Integer sorteio[] = {2, 3, 5, 6, 8, 10, 12, 15, 16, 18, 19, 20, 21, 24, 25};
 
         List<Integer> l1 = Arrays.asList(j1);
         List<Integer> l2 = Arrays.asList(j2);

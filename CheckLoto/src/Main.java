@@ -5,10 +5,10 @@ public class Main {
         Integer j1[] = {2, 3, 4, 5, 7, 9, 10, 11, 12, 13, 15, 16, 18, 21, 25};
         Integer j2[] = {1, 2, 6, 7, 8, 9, 11, 14, 17, 19, 20, 21, 22, 23, 24};
         Integer j3[] = {1, 4, 5, 8, 10, 12, 13, 14, 15, 16, 17, 19, 20, 23, 24};
-        Integer j4[] = {1, 3, 5, 6, 8, 10, 11, 12, 13, 15, 19, 20, 21, 22, 24};
+        Integer j4[] = {2, 3, 4, 5, 7, 9, 11, 12, 14, 17, 19, 21, 22, 23, 25};
 
         //Colocar aqui abaixo os numeros sorteados, devem ser 15 para nao gerar erro.
-        Integer sorteio[] = {1, 2, 4, 5, 6, 8, 9, 11, 12, 14, 17, 18, 21, 23, 24};
+        Integer sorteio[] = {1, 2, 3, 5, 9, 10, 12, 13, 15, 16, 17, 19, 23, 24, 25};
 
         List<Integer> l1 = Arrays.asList(j1);
         List<Integer> l2 = Arrays.asList(j2);

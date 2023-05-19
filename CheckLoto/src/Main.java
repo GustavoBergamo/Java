@@ -7,14 +7,14 @@ public class Main {
         Integer j1[] = {2, 3, 4, 5, 7, 9, 10, 11, 12, 13, 15, 16, 18, 21, 25};
         Integer j2[] = {1, 2, 6, 7, 8, 9, 11, 14, 17, 19, 20, 21, 22, 23, 24};
         Integer j3[] = {1, 4, 5, 8, 10, 12, 13, 14, 15, 16, 17, 19, 20, 23, 24};
-        Integer j4[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        Integer j4[] = {2, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 20, 23, 24};
 
-        System.out.println("Digite os 15 números do bilhete surpresinha");
-        Scanner b = new Scanner(System.in);
+     //   System.out.println("Digite os 15 números do bilhete surpresinha");
+     //   Scanner b = new Scanner(System.in);
 
-        for (int i = 0; i < 15; i++){
-            j4[i] = b.nextInt();
-        }
+     //   for (int i = 0; i < 15; i++){
+     //       j4[i] = b.nextInt();
+     //1   }
         //Colocar aqui abaixo os numeros sorteados, devem ser 15 para nao gerar erro.
         Integer sorteio[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 

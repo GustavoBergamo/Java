@@ -3,18 +3,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package br.com.gustavobergamo.telas;
+import java.sql.*;
+import br.com.gustavobergamo.dal.ModuloConexao;
 
 /**
  *
  * @author gustavobergamo
  */
 public class TeladeLogin extends javax.swing.JFrame {
-
+//Conectando
+    Connection conexao = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+    
     /**
      * Creates new form TeladeLogin
      */
     public TeladeLogin() {
         initComponents();
+        //chamando método conector
+        conexao = ModuloConexao.conector();
+        System.out.println(conexao);
     }
 
     /**

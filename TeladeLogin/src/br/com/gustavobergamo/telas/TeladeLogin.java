@@ -19,13 +19,14 @@ public class TeladeLogin extends javax.swing.JFrame {
     
     //criando logar
     public void logar(){
-        String sql = "use telalogin; select * from table login where login = ? and senha = ?";
+        String sql = "select * from table login where login = ? and senha = ?";
         try {
             //preparar a consulta ao banco de dados. O ? é substituido pelo 
             //conteúdo das variáveis
             pst = conexao.prepareStatement(sql);
             pst.setString(1, txtUsuario.getText());
-            pst.setString(2, txtSenha.getText());
+            String captura = new String(txtSenha.getPassword());
+            pst.setString(2, captura);
             //executar a query (consulta ao banco de dados)
             rs = pst.executeQuery();
             //Se existir o usuário e senha correspondente
@@ -47,7 +48,7 @@ public class TeladeLogin extends javax.swing.JFrame {
         initComponents();
         //chamando método conector
         conexao = ModuloConexao.conector();
-       // System.out.println(conexao);
+       System.out.println(conexao);
         if (conexao != null){
             lblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/gustavobergamo/icones/con.png")));
         }else{

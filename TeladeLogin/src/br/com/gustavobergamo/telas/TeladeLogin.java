@@ -31,8 +31,11 @@ public class TeladeLogin extends javax.swing.JFrame {
             rs = pst.executeQuery();
             //Se existir o usuário e senha correspondente
             if (rs.next()){
+                Inicio inicio = new Inicio();
+                inicio.setVisible(true);
                 TelaPrincipal principal = new TelaPrincipal();
                 principal.setVisible(true);
+                
             }else{
                 JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválido");
             }

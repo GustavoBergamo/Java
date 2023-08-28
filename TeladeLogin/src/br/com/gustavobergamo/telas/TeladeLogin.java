@@ -19,7 +19,7 @@ public class TeladeLogin extends javax.swing.JFrame {
     
     //criando logar
     public void logar(){
-        String sql = "select * from table login where login = ? and senha = ?";
+        String sql = "select * from login where nome = ? and senha = ?;";
         try {
             //preparar a consulta ao banco de dados. O ? é substituido pelo 
             //conteúdo das variáveis

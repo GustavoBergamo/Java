@@ -35,7 +35,6 @@ public class TeladeLogin extends javax.swing.JFrame {
                 inicio.setVisible(true);
                 TelaPrincipal principal = new TelaPrincipal();
                 principal.setVisible(true);
-                
             }else{
                 JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválido");
             }

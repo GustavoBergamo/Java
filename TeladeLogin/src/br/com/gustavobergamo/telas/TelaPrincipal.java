@@ -36,13 +36,74 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 }
                 txtGarra.setText(rs.getString(6));
             } else {
+                JOptionPane.showMessageDialog(null, "Item não cadastrado");
+                //limpando os campos
+                txtId.setText("0");
+                txtNome.setText(null);
+                txtPreco.setText(null);
+                txtQuantidade.setText(null);
+                txtGarra.setText(null);
+                Sim.setSelected(false);
+
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e);
         }
         
     }
+    
+    //Criando método cadastrar
+    private void cadastrar() {
+        int garra = 0;
+        String sql = "insert into pessoas values (Default, '" + txtNome.getText() + "', '" + txtPreco.getText() + "', '" + txtQuantidade.getText() + "', '" + garra + "', '" + txtGarra.getText() + "'";
 
+        if (Sim.isSelected()){
+            garra = 1;
+        }else{
+            garra = 0;
+        }
+        if ((txtNome == null) || (txtPreco == null) || (txtQuantidade == null)) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos");
+        }else{
+            if ((Sim.isSelected()) && (txtGarra == null)){
+                JOptionPane.showMessageDialog(null, "Garra baixa selecionado mas não informado tamanho");
+            }else{
+                try {
+                    pst=conexao.prepareStatement(sql);
+                } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+            }
+        }
+    }    
+    /*Criando metodo cadastrar
+    private void cadastrar(){
+        int garra = 0;
+        if (Sim.setSelect(rootP))
+
+        }
+        String sql = "insert into pessoas values (Default, '" + txtNome.getText() + "', '" + txtPreco.getText() + "', '" + txtQuantidade.getText() + "', '" + garra + "', '" + txtGarra.getText() + "'");
+        try {
+            pst=conexao.prepareStatement(sql);
+            } else {
+                JOptionPane.showMessageDialog(null, "Item não cadastrado");
+                //limpando os campos
+                txtId.setText("0");
+                txtNome.setText(null);
+                txtPreco.setText(null);
+                txtQuantidade.setText(null);
+                txtGarra.setText(null);
+                Sim.setSelected(false);
+
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+        
+*/
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -113,6 +174,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         txtId.setText("0");
 
         btnCadastrar.setText("Cadastrar");
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
+            }
+        });
 
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
@@ -244,6 +310,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // Chamando o método consultar
         consultar();
     }//GEN-LAST:event_btnPesquisarActionPerformed
+
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        // Chamando o método cadastrar
+        cadastrar();
+        
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
     /**
      * @param args the command line arguments

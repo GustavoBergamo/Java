@@ -61,62 +61,34 @@ public class TelaPrincipal extends javax.swing.JFrame {
             pst.setString(1,txtNome.getText());
             pst.setString(2,txtPreco.getText());
             pst.setString(3,txtQuantidade.getText());
-            if (Sim.isSelected()){
-                pst.setString(4, "1");
-                pst.setString(5, txtGarra.getText());
-            }else{
+            if (Sim.isSelected() && txtGarra.getText().isEmpty()){
+                    JOptionPane.showMessageDialog(null, "Preencha um valor para Garra");
+                }else if (Sim.isSelected()){
+                    pst.setString(5, txtGarra.getText());
+                    pst.setString(4, "1");
+                }else{
                 pst.setString(4, "0");
                 pst.setString(5, "0");
+                }   
+            //abaixo atualiza a tabela (executa) e confirma a inserção dos dados
+            int adicionado = pst.executeUpdate();
+            //a linha abaixo serve para entender a lógica da linha anterior
+            //System.out.println(adicionado);
+            if (adicionado > 0){
+                JOptionPane.showMessageDialog(null, "Cadastro realizado");
             }
-            pst.executeUpdate();
+            //limpando os campos
+            txtId.setText("0");
+            txtNome.setText(null);
+            txtPreco.setText(null);
+            txtQuantidade.setText(null);
+            txtGarra.setText(null);
+            Sim.setSelected(false);
                 } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e);
                 }
     }
-       /* if (Sim.isSelected()){
-            garra = 1;
-        }else{
-            garra = 0;
-        }
-        if ((txtNome == null) || (txtPreco == null) || (txtQuantidade == null)) {
-            JOptionPane.showMessageDialog(null, "Preencha todos os campos");
-        }else{
-            if ((Sim.isSelected()) && (txtGarra == null)){
-                JOptionPane.showMessageDialog(null, "Garra baixa selecionado mas não informado tamanho");
-            }else{
-                try {
-                    String sql = "insert into pessoas values (Default, '" + txtNome.getText() + "', '" + txtPreco.getText() + "', '" + txtQuantidade.getText() + "', '" + garra + "', '" + txtGarra.getText() + "')";
-                    pst=conexao.prepareStatement(sql);
-                } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,e);
-        }
-            }
-        }*/
-    /*Criando metodo cadastrar
-    private void cadastrar(){
-        int garra = 0;
-        if (Sim.setSelect(rootP))
-
-        }
-        String sql = "insert into pessoas values (Default, '" + txtNome.getText() + "', '" + txtPreco.getText() + "', '" + txtQuantidade.getText() + "', '" + garra + "', '" + txtGarra.getText() + "'");
-        try {
-            pst=conexao.prepareStatement(sql);
-            } else {
-                JOptionPane.showMessageDialog(null, "Item não cadastrado");
-                //limpando os campos
-                txtId.setText("0");
-                txtNome.setText(null);
-                txtPreco.setText(null);
-                txtQuantidade.setText(null);
-                txtGarra.setText(null);
-                Sim.setSelected(false);
-
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,e);
-        }
-        
-*/
+      
     
     
     

@@ -18,7 +18,10 @@ public class ModuloConexao {
         //Estabelecendo conexão com banco de dados
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/telalogin?user=root&password=");
+            //a linha abaixo é para quando o banco de dados é local
+            //conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/telalogin?user=root&password=");
+            //a linha abaixo é para usar o banco de dados do freemysqlhosting.net
+            conexao = DriverManager.getConnection("jdbc:mysql://sql10.freemysqlhosting.net:3306/sql10649260?user=sql10649260&password=6HYjAH9Bib");
             return conexao;
         } catch (Exception e) {
             System.out.println(e);

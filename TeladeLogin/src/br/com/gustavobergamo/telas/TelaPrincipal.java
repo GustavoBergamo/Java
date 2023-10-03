@@ -20,13 +20,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
     //Criando metodo consultar
     private void consultar(){
-        String sql = "select * from produtos where nome=?";
+        String sql = "select * from produtos where id=?";
         try {
             pst=conexao.prepareStatement(sql);
-            pst.setString(1, txtNome.getText());
+            pst.setString(1, txtId2.getText());
             rs =pst.executeQuery();
             if (rs.next()) {
                 txtId.setText(rs.getString(1));
+                txtNome.setText(rs.getString(2));
                 txtPreco.setText(rs.getString(3));
                 txtQuantidade.setText(rs.getString(4));
                 if (rs.getString(5).equals("1")){
@@ -39,6 +40,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Item não cadastrado");
                 //limpando os campos
                 txtId.setText("0");
+                txtId2.setText(null);
                 txtNome.setText(null);
                 txtPreco.setText(null);
                 txtQuantidade.setText(null);
@@ -79,6 +81,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
             //limpando os campos
             txtId.setText("0");
+            txtId2.setText(null);
             txtNome.setText(null);
             txtPreco.setText(null);
             txtQuantidade.setText(null);
@@ -89,9 +92,72 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 }
     }
       
+    //criando o método alterar dados
+    private void alterar(){
+        String sql = "update produtos set nome=?,preco=?,quantidade=?,garrabaixa=?,garra=? where id=?";
+        try {
+            pst=conexao.prepareStatement(sql);
+            pst.setString(1, txtNome.getText());
+            pst.setString(2, txtPreco.getText());
+            pst.setString(3, txtQuantidade.getText());
+            if (Sim.isSelected() && txtGarra.getText().isEmpty()){
+                    JOptionPane.showMessageDialog(null, "Preencha um valor para Garra");
+                }else if (Sim.isSelected()){
+                    pst.setString(5, txtGarra.getText());
+                    pst.setString(4, "1");
+                }else{
+                pst.setString(4, "0");
+                pst.setString(5, "0");
+                }   
+            pst.setString(6, txtId.getText());
+            //As linhas abaixo confirmam a alteração
+            int adicionado = pst.executeUpdate();
+            //a linha abaixo serve para entender a lógica da linha anterior
+            //System.out.println(adicionado);
+            if (adicionado > 0){
+                JOptionPane.showMessageDialog(null, "Cadastro alterado");
+            }
+            //limpando os campos
+            txtId.setText("0");
+            txtId2.setText(null);
+            txtNome.setText(null);
+            txtPreco.setText(null);
+            txtQuantidade.setText(null);
+            txtGarra.setText(null);
+            Sim.setSelected(false); 
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+            
+        }
+    }
     
     
-    
+    //criando método remover
+    private void remover(){
+        //a estrutura abaixo confirma a remoção
+        int confirma=JOptionPane.showConfirmDialog(null, "Confirma a remoção?","Atenção",JOptionPane.YES_NO_OPTION);
+        if (confirma==JOptionPane.YES_OPTION) {
+            String sql="delete from produtos where id=?";
+            try{
+               pst=conexao.prepareStatement(sql);
+               pst.setString(1, txtId.getText());
+               int apagado = pst.executeUpdate();
+               if (apagado >0){
+                   JOptionPane.showMessageDialog(null, "Item removido com sucesso");
+                   //limpando os campos
+                   txtId.setText("0");
+                   txtId2.setText(null);
+                   txtNome.setText(null);
+                   txtPreco.setText(null);
+                   txtQuantidade.setText(null);
+                   txtGarra.setText(null);
+                   Sim.setSelected(false);
+               }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -119,6 +185,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnEditar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        txtId2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -176,10 +243,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Item");
+
+        txtId2.setSize(new java.awt.Dimension(90, 23));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -199,7 +278,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(43, 43, 43)
+                                    .addComponent(txtId2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -243,7 +325,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(txtId)
                     .addComponent(jLabel8))
                 .addGap(3, 3, 3)
-                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtId2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -304,6 +388,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastrar();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        // chamando o método alterar
+        alterar();
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        //chamando o método remover
+        remover();
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -355,6 +449,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField txtGarra;
     private javax.swing.JLabel txtId;
+    private javax.swing.JTextField txtId2;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtPreco;
     private javax.swing.JTextField txtQuantidade;

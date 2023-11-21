@@ -33,7 +33,7 @@ public class ResultadoApi {
     try{  
         linhas[1].getChars(125 , 199, ch, 0); 
         oi = ch;
-    }catch(Exception ex){System.out.println(ex);}  
+    }catch(Exception ex){JOptionPane.showMessageDialog(null, ex);}  
     Integer j1[] = {2, 3, 4, 5, 7, 9, 10, 11, 12, 13, 15, 16, 18, 21, 25};
     Integer j2[] = {1, 2, 6, 7, 8, 9, 11, 14, 17, 19, 20, 21, 22, 23, 24};
     Integer s[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};

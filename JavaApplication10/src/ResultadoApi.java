@@ -10,25 +10,52 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+import java.net.HttpURLConnection;
+
 
 public class ResultadoApi {
     static char[] oi = new char[74];
     public static void ResultadoApi(String ovo) throws MalformedURLException, UnsupportedEncodingException, IOException {
     String concurso = ovo;
-    URL url = null;
-    url = new URL("https://loteriascaixa-api.herokuapp.com/api/lotofacil/" + concurso);
+    URL url = new URL("https://servicebus2.caixa.gov.br/portaldeloterias/api/lotofacil/2959");
+    BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+    String linha = "";
+    while ((linha = reader.readLine()) != null)
+        System.out.println(linha);
+    reader.close();
+    /*HttpURLConnection con = (HttpURLConnection) url.openConnection();
+    con.setRequestMethod("GET");
+    
+    //int responseCode = con.getResponseCode();
+   // if (responseCode == 200) {
+                BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String inputLine = br.readLine();
+
+                System.out.println(inputLine);
+
+     //       } else {
+       //         System.out.println("erro " + responseCode);
+         //   }
+    }       
+    System.out.println(url);
     URLConnection connection = url.openConnection();
+    System.out.println(connection);
     InputStream is  = connection.getInputStream();
+    System.out.println();
     BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+    System.out.println(br);
     String result = "";
+    System.out.println(result);
     StringBuilder jsonresult = new StringBuilder();
     int i = 0;
-    String[] linhas = new String[5];
+    String[] linhas = new String[50];
+    System.out.println(jsonresult);
+
     while ((result = br.readLine()) != null) {
         i = i + 1;
         jsonresult.append(result);
-        linhas[i] = result;        
-    }
+        linhas[i] = result;  }      
     char[] ch = new char[74];
     try{  
         linhas[1].getChars(125 , 199, ch, 0); 
@@ -88,6 +115,6 @@ public class ResultadoApi {
             }    
         }
         JOptionPane.showMessageDialog(null, "Jogo 1: " + p1 + " pontos e Jogo 2: "+ p2 + " pontos");
-    }   
-}
+  */  } }  
+
 

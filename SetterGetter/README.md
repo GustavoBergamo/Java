@@ -1,0 +1,1 @@
+Setting/getting features to keep variables privates

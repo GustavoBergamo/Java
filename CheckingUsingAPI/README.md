@@ -1,0 +1,1 @@
+Project to check loto result using an external API

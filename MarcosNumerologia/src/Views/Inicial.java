@@ -31,6 +31,8 @@ public class Inicial extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
+        txtLetras = new javax.swing.JLabel();
+        txtNumeros = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(900, 600));
@@ -52,6 +54,10 @@ public class Inicial extends javax.swing.JFrame {
             }
         });
 
+        txtLetras.setText("Nome");
+
+        txtNumeros.setText("Números");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -62,6 +68,8 @@ public class Inicial extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(102, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNumeros)
+                    .addComponent(txtLetras)
                     .addComponent(btnCalcular)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -78,7 +86,11 @@ public class Inicial extends javax.swing.JFrame {
                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnCalcular)
-                .addGap(0, 264, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(txtLetras)
+                .addGap(18, 18, 18)
+                .addComponent(txtNumeros)
+                .addGap(0, 185, Short.MAX_VALUE))
         );
 
         pack();
@@ -129,7 +141,9 @@ public class Inicial extends javax.swing.JFrame {
     private javax.swing.JButton btnCalcular;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel txtLetras;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JLabel txtNumeros;
     // End of variables declaration//GEN-END:variables
 
 }

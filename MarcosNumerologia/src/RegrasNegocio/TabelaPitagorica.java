@@ -53,13 +53,10 @@ public class TabelaPitagorica {
                 Numeros[i] = 9;
                 Soma = Soma + 9;
             }
-        //    else {
-        //        Numeros[i] = 0;
-        //    }System.out.println();
         }
+        //Redução dos números de Soma para apenas um dígito    
         System.out.println(Arrays.toString(Letras));
         System.out.print(Arrays.toString(Numeros));
-
         System.out.print(" Soma = "+ Soma);
         return Soma;
     }

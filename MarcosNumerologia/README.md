@@ -1,1 +1,0 @@
-Program developed to a numerology professional. 

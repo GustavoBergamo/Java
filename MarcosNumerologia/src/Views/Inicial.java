@@ -6,6 +6,8 @@
 package Views;
 
 import RegrasNegocio.TabelaPitagorica;
+import java.util.Arrays;
+
 
 /**
  *
@@ -54,8 +56,10 @@ public class Inicial extends javax.swing.JFrame {
             }
         });
 
+        txtLetras.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
         txtLetras.setText("Nome");
 
+        txtNumeros.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
         txtNumeros.setText("Números");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -65,32 +69,31 @@ public class Inicial extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(102, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNumeros)
-                    .addComponent(txtLetras)
+                    .addComponent(jLabel2)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCalcular)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtNome)))
-                .addGap(95, 95, 95))
+                    .addComponent(txtLetras)
+                    .addComponent(txtNumeros))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCalcular)
-                .addGap(27, 27, 27)
+                .addGap(28, 28, 28)
                 .addComponent(txtLetras)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNumeros)
-                .addGap(0, 185, Short.MAX_VALUE))
+                .addGap(0, 200, Short.MAX_VALUE))
         );
 
         pack();
@@ -99,7 +102,9 @@ public class Inicial extends javax.swing.JFrame {
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         TabelaPitagorica tabelapitagorica = new TabelaPitagorica();
         tabelapitagorica.LetrasEmNumeros(txtNome.getText());
-        // TODO add your handling code here:
+        txtLetras.setText(TabelaPitagorica.getLetras());
+        txtNumeros.setText(TabelaPitagorica.getNumeros());
+// TODO add your handling code here:
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**

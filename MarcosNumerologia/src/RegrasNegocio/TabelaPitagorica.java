@@ -3,15 +3,19 @@ package RegrasNegocio;
 import java.util.Arrays;
 
 public class TabelaPitagorica {
-    public int LetrasEmNumeros (String nome) {
-        int Quantidade = nome.length();
-        int[] Numeros = new int[Quantidade];
-        char[] Letras = new char[Quantidade];
-        int Soma = 0;
+        static int Quantidade;
+        static int[] Numeros;
+        static char[] Letras;
+        static int Soma = 0;
+
+    public static int LetrasEmNumeros (String nome) {
         
+        Quantidade = nome.length();
+        Numeros = new int[Quantidade];
+        Letras = new char[Quantidade];
         //Colocando letras do nome dentro de um Array Letras
         for (int i = 0; i < Quantidade; i++) {
-            Letras[i] = nome.charAt(i);
+        Letras[i] = nome.charAt(i);
         }
         
         //Colocando valor correspondente de cada letra em um Array Numeros
@@ -58,6 +62,21 @@ public class TabelaPitagorica {
         System.out.println(Arrays.toString(Letras));
         System.out.print(Arrays.toString(Numeros));
         System.out.print(" Soma = "+ Soma);
+        
+
         return Soma;
     }
+    
+    //método para enviar letras do nome
+    public static String getLetras(){
+        String a = Arrays.toString(Letras);
+        return a;
+    }
+    
+    //método para enviar números do nome
+    public static String getNumeros(){
+        String a = Arrays.toString(Numeros);
+        return a;
+    }
+    
 }

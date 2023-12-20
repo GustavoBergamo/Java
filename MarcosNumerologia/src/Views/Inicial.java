@@ -6,6 +6,7 @@
 package Views;
 
 import RegrasNegocio.TabelaPitagorica;
+import RegrasNegocio.AnalisandoPalavras;
 import java.util.Arrays;
 
 
@@ -37,17 +38,28 @@ public class Inicial extends javax.swing.JFrame {
         txtNumeros = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Marcos Numerologia");
+        setBackground(new java.awt.Color(255, 255, 255));
+        setBounds(new java.awt.Rectangle(0, 0, 900, 600));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(900, 600));
+        setResizable(false);
+        setSize(new java.awt.Dimension(900, 600));
 
         jLabel1.setText("Protótipo");
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setForeground(new java.awt.Color(0, 0, 255));
         jLabel2.setText("Digite o nome para cálculo pela tabela Pitagórica");
 
-        txtNome.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        txtNome.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         txtNome.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtNome.setText("nome");
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -56,11 +68,9 @@ public class Inicial extends javax.swing.JFrame {
             }
         });
 
-        txtLetras.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
-        txtLetras.setText("Nome");
+        txtLetras.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
 
-        txtNumeros.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
-        txtNumeros.setText("Números");
+        txtNumeros.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -70,30 +80,35 @@ public class Inicial extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addComponent(jLabel2)
+                .addContainerGap(349, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCalcular)
-                    .addComponent(txtLetras)
-                    .addComponent(txtNumeros))
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtLetras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNumeros, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(btnCalcular)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(3, 3, 3)
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCalcular)
                 .addGap(28, 28, 28)
-                .addComponent(txtLetras)
+                .addComponent(btnCalcular)
+                .addGap(34, 34, 34)
+                .addComponent(txtLetras, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNumeros)
-                .addGap(0, 200, Short.MAX_VALUE))
+                .addComponent(txtNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 288, Short.MAX_VALUE))
         );
 
         pack();
@@ -104,8 +119,14 @@ public class Inicial extends javax.swing.JFrame {
         tabelapitagorica.LetrasEmNumeros(txtNome.getText());
         txtLetras.setText(TabelaPitagorica.getLetras());
         txtNumeros.setText(TabelaPitagorica.getNumeros());
+        AnalisandoPalavras.AnalisandoPalavras(txtNome.getText());
+
 // TODO add your handling code here:
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
 
     /**
      * @param args the command line arguments
